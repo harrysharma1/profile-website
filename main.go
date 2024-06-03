@@ -1,10 +1,10 @@
 package main
 
 import (
+	"fmt"
 	"html/template"
 	"log"
 	"net/http"
-
 )
 
 
@@ -16,7 +16,7 @@ func main()  {
 	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		err = tmpl.ExecuteTemplate(w,"index",nil)
+		err = tmpl.ExecuteTemplate(w,"index",index_data)
 		if err != nil { 
 			http.Error(w,err.Error(),http.StatusInternalServerError)
 		}
@@ -33,6 +33,6 @@ func main()  {
 			http.Error(w,err.Error(),http.StatusInternalServerError)
 		}
 	})
-
+	fmt.Println(Hello)
 	log.Fatal(http.ListenAndServe(":6969", nil))
 }

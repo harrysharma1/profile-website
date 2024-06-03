@@ -9,22 +9,13 @@
 	<div class="flex flex-wrap gap-10 mt-10 ml-10 mr-10 mb-10">
 		<div class="block w-[550px] h-[250px] p-6 rounded-lg border border-neutral-50 bg-neutral-950">
 			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-				Welcome to my page
+					{{.Welcome.Title}}
 			</h5>
 			<div class="font-normal text-gray-700 dark:text-gray-400">
-				<p>
-					I am currently doing my Undergrad at <a href="https://www.kcl.ac.uk"
-						class="hover:underline hover:text-gray-300">King's College London</a>,
-					where I am doing an industry placement within the University under the <a
-						href="https://www.kcl.ac.uk/research/facilities/e-research"
-						class="hover:underline hover:text-gray-300">e-Research department (under
-						RMID)</a>
-				</p>
-				<br>
-				<p>
-					This website will go over some of the projects I have taken part in, both in and
-					out of my time with e-Research.
-				</p>
+				{{range .Welcome.Paragraphs}}
+					<p>{{.}}</p>	
+					<br>
+				{{end}}
 			</div>
 		</div>
 		<div class="block w-[550px] h-[250px] p-6 rounded-lg border-neutral-50 bg-neutral-900">
