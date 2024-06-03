@@ -31,62 +31,33 @@
 
 		<div class="block w-[450px] h-[370px] p-6 rounded-lg border border-neutral-50 bg-neutral-950">
 			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-				Flake8 CLI in different languages
+				{{.Flake8.Title}}
 			</h5>
 			<div class="font-normal text-gray-700 dark:text-gray-400">
-				<p>
-					Here are some CLI implementation calling on basic API endpoints.
-					The main focus was trying to use mainly the languages standard library.
-				</p>
-				<br>
-				<p>
-					I did go a bit over the top with python when it came to styling terminal
-					output.
-				</p>
-				<br>
-				<p>
-					The best of the three to program in had to be, in my opinion, Golang.
-				</p>
-				<br>
+					{{range .Flake8.Paragraphs}}
+						<p>{{.}}</p>
+						<br>
+					{{end}}
 				<ul class="max-w-md space-y-1">
-					<li> <a href="https://github.com/harrysharma1/goflake8api"
-							class="hover:underline hover:text-gray-300">⚪ Implementation in
-							Golang</a></li>
-					<li> <a href="https://github.com/harrysharma1/rust-flake8api"
-							class="hover:underline hover:text-gray-300">⚪ Implementation in
-							Rust</a></li>
-					<li> <a href="https://github.com/harrysharma1/flake8api"
-							class="hover:underline hover:text-gray-300">⚪ Implementation in
-							Python</a></li>
+					{{range .Flake8.Lists}}
+						<li>{{.}}</li>
+					{{end}}
 				</ul>
 			</div>
 		</div>
 		<div class="block w-[450px] h-[370px] p-6 rounded-lg border border-neutral-50 bg-neutral-950">
 			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-				Spack Open Source Contributions
+				{{.Spack.Title}}
 			</h5>
 			<div class="font-normal text-gray-700 dark:text-gray-400">
-				<p>
-					Spack is an open source package manager, written in Python, used to build and
-					run software on HPC's.
-				</p>
-				<br>
-				<p>
-					I have made some software contributions for Spack. The next goal would be to
-					contribute
-					to the actual Spack build systems.
-				</p>
-				<br>
+				{{range .Spack.Paragraphs}}
+					<p>{{.}}</p>
+					<br>
+				{{end}}
 				<ul class="max-w-md space-y-1">
-					<li><a href="https://github.com/spack/spack/pull/41714"
-							class="hover:underline hover:text-gray-300">⚪
-							Vbz-compression</a></li>
-					<li><a href="https://github.com/spack/spack/pull/41967"
-							class="hover:underline hover:text-gray-300">⚪ Glow</a></li>
-					<li><a href="https://github.com/spack/spack/pull/41988"
-							class="hover:underline hover:text-gray-300">⚪ Dorado</a></li>
-					<li><a href="https://github.com/spack/spack/pull/44339"
-						        class="hover:underline hover:text-gray-300">⚪ Metacarpa </a></li>
+					{{range .Spack.Lists}}
+						<li>{{.}}</li>	
+					{{end}}
 				</ul>
 			</div>
 		</div>
