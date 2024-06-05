@@ -61,6 +61,17 @@
 				</ul>
 			</div>
 		</div>
+		<div class="block w-[450px] h-[265px] p-6 rounded-lg border border-neutral-50 bg-neutral-950">
+			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+				{{.GoShell.Title}}
+			</h5>
+			<div class="font-normal text-gray-700 dark:text-gray-400">
+				{{range .GoShell.Paragraphs}}
+					<p>{{.}}</p>
+					<br>
+				{{end}}	
+			</div>
+		</div>
 	</div>
 	<br>
 	{{template "_footer"}}

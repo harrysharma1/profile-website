@@ -21,11 +21,17 @@ type IndexSpackBox struct{
 	Lists []template.HTML
 }
 
+type GoShellBox struct{
+	Title string
+	Paragraphs []template.HTML
+}
+
 
 type IndexData struct{
 	Welcome IndexWelcomeBox
 	Flake8 IndexFlake8Box
 	Spack IndexSpackBox
+	GoShell GoShellBox
 }
 
 var index_data IndexData=IndexData{
@@ -81,6 +87,15 @@ class="hover:underline hover:text-gray-300">King's College London</a>, where I a
 							class="hover:underline hover:text-gray-300">⚪ Dorado</a>`,
 			`<a href="https://github.com/spack/spack/pull/44339"
 						        class="hover:underline hover:text-gray-300">⚪ Metacarpa </a>`,
+		},
+	},
+
+	GoShell: GoShellBox{
+		Title: "Go Shell",
+		Paragraphs: []template.HTML{
+			`I have been working on writing my own shell implementation using Golang and its standard library`,
+			`You can find the implementation <a href="https://github.com/harrysharma1/go-shell" class="hover:underline hover:text-gray-300">here</a>`,
+			`The inspiration for this was mainly to improve my skills witha golang and to understand how shelss such as zsh, csh, bash, etc. work`,
 		},
 	},
 }
