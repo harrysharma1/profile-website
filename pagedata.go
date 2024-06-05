@@ -39,8 +39,8 @@ var index_data IndexData=IndexData{
 		Title: "Welcome to my page!",
 		Paragraphs: [] template.HTML{
 		`
-I am currently doing my Undergrad at <a href="https://www.kcl.ac.uk"
-class="hover:underline hover:text-gray-300">King's College London</a>, where I am doing an industry placement within the University under the <a href="https://www.kcl.ac.uk/research/facilities/e-research" class="hover:underline hover:text-gray-300">e-Research department (under RMID)</a>		
+I am currently doing my Undergrad at <a href="https://www.kcl.ac.uk" target="_blank"
+class="hover:underline hover:text-gray-300">King's College London</a>, where I am doing an industry placement within the University under the <a href="https://www.kcl.ac.uk/research/facilities/e-research" target="_blank" class="hover:underline hover:text-gray-300">e-Research department (under RMID)</a>		
 `,
 `This website will go over some of the projects I have taken part in, both in and out of my time with e-Research.`,
 		},
@@ -55,16 +55,19 @@ class="hover:underline hover:text-gray-300">King's College London</a>, where I a
 		},
 		Lists: [] template.HTML{
 			` <a href="https://github.com/harrysharma1/goflake8api"
+							target="_blank"
 							class="hover:underline hover:text-gray-300">⚪ Implementation in
 							Golang</a>
 			`,
 			`
 			<a href="https://github.com/harrysharma1/rust-flake8api"
+							target="_blank"
 							class="hover:underline hover:text-gray-300">⚪ Implementation in
 							Rust</a>
 			`,
 			`
 			<a href="https://github.com/harrysharma1/flake8api"
+							target="_blank"
 							class="hover:underline hover:text-gray-300">⚪ Implementation in
 							Python</a>
 			`,
@@ -79,13 +82,17 @@ class="hover:underline hover:text-gray-300">King's College London</a>, where I a
 		},
 		Lists: []template.HTML{
 			`<a href="https://github.com/spack/spack/pull/41714"
+							target="_blank"
 							class="hover:underline hover:text-gray-300">⚪
 							Vbz-compression</a>`,
 			`<a href="https://github.com/spack/spack/pull/41967"
+							target="_blank"
 							class="hover:underline hover:text-gray-300">⚪ Glow</a>`,
 			`<a href="https://github.com/spack/spack/pull/41988"
+							target="_blank"
 							class="hover:underline hover:text-gray-300">⚪ Dorado</a>`,
 			`<a href="https://github.com/spack/spack/pull/44339"
+							target="_blank"
 						        class="hover:underline hover:text-gray-300">⚪ Metacarpa </a>`,
 		},
 	},
@@ -98,4 +105,77 @@ class="hover:underline hover:text-gray-300">King's College London</a>, where I a
 			`The inspiration for this was mainly to improve my skills witha golang and to understand how shelss such as zsh, csh, bash, etc. work`,
 		},
 	},
+}
+
+type Timeline struct{
+	Date string
+	Title string
+	Text template.HTML
+}
+
+type AboutData struct{
+	Timeline [] Timeline
+}
+
+var about_data = AboutData{
+	Timeline: []Timeline{
+		{
+			Date: "June 2019",
+			Title: "Finished GCSE",
+			Text: `
+			<p> I finished my GCSEs in 2019 and received the following grades:</p>
+			<br>
+			<ul>
+				<li>Geography: 9</li>
+				<li>History: 8</li>
+				<li>Maths: 8</li>
+				<li>Science: 8/7</li>
+				<li>English Literature: 7</li>
+				<li>English Language: 6</li>
+				<li>Computer Science: 6</li>
+				<li>Business Studies: LM2</li>
+			</ul>
+			<br>
+                        <p><strong>Note to anyone outside of the UK:</strong> General Certificate of Secondary Education Ranking was switched to a 1-9 system a year or two before I took my exams (anything less than a 4 is a fail). </p>
+			<p> It was in GCSE Computer Science where I had started using both <strong>Java</strong> and <strong>Python</strong>. </p>
+			<p> I learnt the fundementals that were specified by OCR</p>
+			<p> You can find the the the specification that OCR set <a href="https://www.ocr.org.uk/images/225975-specification-accredited-gcse-computer-science-j276.pdf" target="_blank" class="hover:underline hover:text-gray-300">here</a> </p>
+			<p> It is split into two sections and a 20 Hours Project: </p>
+			<br>
+			<ol>
+				<li><strong>Computer systems</strong> My favourite topics were: Wired and wireless networks, Network topologies, protocols and layers, System security, System software</li>
+				<li><strong>Computational thinking, algorithms and programming</strong> My favourite topics were: Data representation, Algorithms, Programming techniques</li>
+				<li><strong>Programming Project:</strong> My project consisted of a phsysics simulaton, written in Java, that mapped projectile motion. Sadly I had not used any version control system and the computer I programmed it in is bricked so this has been lost to time.
+			</ol>
+			`,
+		},
+		{
+			Date: "June 2021",
+			Title: "Finished A-Levels",
+			Text: `
+			<p> I completed my A-levels in Covid so  I won't go too much into detail but my grades were:</p>
+			<br>
+			<ol>
+			<li>Maths: A </li>
+			<li>Computer Science: B</li>
+			<li>Chemisry B </li> 
+			`,
+		},
+		{
+			Date: "September 2021",
+			Title: "Start University in King's College London",
+			Text: `
+			`,
+		},
+		{
+			Date: "May 2023",
+			Title: "Finish 2nd Year Exams",
+			Text: `Hello`,
+		},
+		{
+			Date: "September 2023",
+			Title: "Start Industry Placement in e-Research",
+			Text: `Hello`,
+		},
+	},	
 }

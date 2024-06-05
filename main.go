@@ -22,7 +22,7 @@ func main()  {
 		}
 	})	
 	http.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
-		err = tmpl.ExecuteTemplate(w,"about",nil)
+		err = tmpl.ExecuteTemplate(w,"about",about_data)
 		if err != nil {
 			http.Error(w,err.Error(),http.StatusInternalServerError)
 		}
