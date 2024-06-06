@@ -208,7 +208,7 @@ var about_data = AboutData{
 		{
 			Date: "September 2023",
 			Title: "Start Industry Placement in e-Research",
-			Text: `<p><PLACEHOLDER NOT FINISHED YET</p>`,
+			Text: `<p>PLACEHOLDER NOT FINISHED YET</p>`,
 		},
 	},	
 }

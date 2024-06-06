@@ -5,76 +5,80 @@
 {{template "_head"}}
 
 <body class="bg-neutral-900">
-	{{template "_navbar"}}
-	<div class="flex flex-wrap gap-10 mt-10 ml-10 mr-10 mb-10">
-		<div class="block w-[550px] h-[250px] p-6 rounded-lg border border-neutral-50 bg-neutral-950">
-			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-					{{.Welcome.Title}}
-			</h5>
-			<div class="font-normal text-gray-700 dark:text-gray-400">
-				{{range .Welcome.Paragraphs}}
-					<p>{{.}}</p>	
-					<br>
-				{{end}}
-			</div>
-		</div>
-		<div class="block w-[550px] h-[250px] p-6 rounded-lg border-neutral-50 bg-neutral-900">
-			<p><img src="https://github-readme-stats.vercel.app/api?username=harrysharma1&amp;show_icons=true&amp;theme=tokyonight"
-					alt="Harry&#39;s GitHub stats"></p>
-		</div>
+	<div class="flex flex-col h-screen">
+		<div>{{template "_navbar"}}</div>
+		<div class="flex-grow">
+			<div class="flex flex-wrap gap-10 mt-10 ml-10 mr-10 mb-10">
+				<div class="block w-[550px] h-[250px] p-6 rounded-lg border border-neutral-50 bg-neutral-950">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+							{{.Welcome.Title}}
+					</h5>
+					<div class="font-normal text-gray-700 dark:text-gray-400">
+						{{range .Welcome.Paragraphs}}
+							<p>{{.}}</p>	
+							<br>
+						{{end}}
+					</div>
+				</div>
+				<div class="block w-[550px] h-[250px] p-6 rounded-lg border-neutral-50 bg-neutral-900">
+					<p><img src="https://github-readme-stats.vercel.app/api?username=harrysharma1&amp;show_icons=true&amp;theme=tokyonight"
+							alt="Harry&#39;s GitHub stats"></p>
+				</div>
 
-		<div class="block w-[300px] h-[370px]  rounded-lg border border-neutral-50 bg-neutral-950">
-			<p><a href="https://github.com/anuraghazra/github-readme-stats"><img
-						src="https://github-readme-stats.vercel.app/api/top-langs/?username=harrysharma1&amp;layout=donut-vertical"
-						alt="Top Langs"></a></p>
-		</div>
+				<div class="block w-[300px] h-[370px]  rounded-lg border border-neutral-50 bg-neutral-950">
+					<p><a href="https://github.com/anuraghazra/github-readme-stats"><img
+								src="https://github-readme-stats.vercel.app/api/top-langs/?username=harrysharma1&amp;layout=donut-vertical"
+								alt="Top Langs"></a></p>
+				</div>
 
-		<div class="block w-[450px] h-[370px] p-6 rounded-lg border border-neutral-50 bg-neutral-950">
-			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-				{{.Flake8.Title}}
-			</h5>
-			<div class="font-normal text-gray-700 dark:text-gray-400">
-					{{range .Flake8.Paragraphs}}
-						<p>{{.}}</p>
-						<br>
-					{{end}}
-				<ul class="max-w-md space-y-1">
-					{{range .Flake8.Lists}}
-						<li>{{.}}</li>
-					{{end}}
-				</ul>
+				<div class="block w-[450px] h-[370px] p-6 rounded-lg border border-neutral-50 bg-neutral-950">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+						{{.Flake8.Title}}
+					</h5>
+					<div class="font-normal text-gray-700 dark:text-gray-400">
+							{{range .Flake8.Paragraphs}}
+								<p>{{.}}</p>
+								<br>
+							{{end}}
+						<ul class="max-w-md space-y-1">
+							{{range .Flake8.Lists}}
+								<li>{{.}}</li>
+							{{end}}
+						</ul>
+					</div>
+				</div>
+				<div class="block w-[450px] h-[370px] p-6 rounded-lg border border-neutral-50 bg-neutral-950">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+						{{.Spack.Title}}
+					</h5>
+					<div class="font-normal text-gray-700 dark:text-gray-400">
+						{{range .Spack.Paragraphs}}
+							<p>{{.}}</p>
+							<br>
+						{{end}}
+						<ul class="max-w-md space-y-1">
+							{{range .Spack.Lists}}
+								<li>{{.}}</li>	
+							{{end}}
+						</ul>
+					</div>
+				</div>
+				<div class="block w-[450px] h-[265px] p-6 rounded-lg border border-neutral-50 bg-neutral-950">
+					<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+						{{.GoShell.Title}}
+					</h5>
+					<div class="font-normal text-gray-700 dark:text-gray-400">
+						{{range .GoShell.Paragraphs}}
+							<p>{{.}}</p>
+							<br>
+						{{end}}	
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="block w-[450px] h-[370px] p-6 rounded-lg border border-neutral-50 bg-neutral-950">
-			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-				{{.Spack.Title}}
-			</h5>
-			<div class="font-normal text-gray-700 dark:text-gray-400">
-				{{range .Spack.Paragraphs}}
-					<p>{{.}}</p>
-					<br>
-				{{end}}
-				<ul class="max-w-md space-y-1">
-					{{range .Spack.Lists}}
-						<li>{{.}}</li>	
-					{{end}}
-				</ul>
-			</div>
-		</div>
-		<div class="block w-[450px] h-[265px] p-6 rounded-lg border border-neutral-50 bg-neutral-950">
-			<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-				{{.GoShell.Title}}
-			</h5>
-			<div class="font-normal text-gray-700 dark:text-gray-400">
-				{{range .GoShell.Paragraphs}}
-					<p>{{.}}</p>
-					<br>
-				{{end}}	
-			</div>
-		</div>
+		<br>
+		<div>{{template "_footer"}}</div>
 	</div>
-	<br>
-	{{template "_footer"}}
 	</body>
 
 </html>
