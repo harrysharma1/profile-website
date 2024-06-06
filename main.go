@@ -32,6 +32,20 @@ func main()  {
 		if err != nil {
 			http.Error(w,err.Error(),http.StatusInternalServerError)
 		}
+
+		if r.Method == http.MethodPost{
+			details := ContactDetails{
+				r.FormValue("email"),
+				r.FormValue("subject"),
+				r.FormValue("body"),
+			}
+			fmt.Println(details.Email,details.Subject,details.Body)
+			err = tmpl.ExecuteTemplate(w,"contact",struct{Success bool}{true})
+			if err != nil{
+				http.Error(w,err.Error(),http.StatusInternalServerError)
+			}
+
+		}
 	})
 	http.HandleFunc("/docs", func(w http.ResponseWriter, r *http.Request) {
 		err = tmpl.ExecuteTemplate(w,"doc",nil)

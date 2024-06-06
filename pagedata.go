@@ -212,3 +212,10 @@ var about_data = AboutData{
 		},
 	},	
 }
+
+type ContactDetails struct{
+	Email string
+	Subject string
+	Body string
+}
+
