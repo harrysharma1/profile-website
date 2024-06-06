@@ -33,6 +33,12 @@ func main()  {
 			http.Error(w,err.Error(),http.StatusInternalServerError)
 		}
 	})
+	http.HandleFunc("/docs", func(w http.ResponseWriter, r *http.Request) {
+		err = tmpl.ExecuteTemplate(w,"doc",nil)
+		if err != nil{
+			http.Error(w,err.Error(),http.StatusInternalServerError)
+		}
+	})
 	fmt.Println(Hello)
 	log.Fatal(http.ListenAndServe(":6969", nil))
 }
