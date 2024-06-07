@@ -8,23 +8,18 @@
 	<div class="flex flex-col h-screen">
 		<div>{{template "_navbar"}}</div>
 		<div class="flex-grow">
-			<h1 class="text-white">Contact</h1>
 			<br>
 			<div class="h-96 w-1/2 h-1/2 bg-neutral-500 rounded-lg p-4 mx-auto text-center text-white">
-					<form method="POST">
-					<label>Email:</label><br />
-					<input type="text" name="email"><br />
-					<label>Subject:</label><br />
-					<input type="text" name="subject"><br />
-					<label>Message:</label><br />
-					<textarea name="message"></textarea><br />
-					<input type="submit">
-					</form>
+				{{if .Success}}
+					{{template "_form"}}
+					<p>Success</p>
+				{{else}}
+					{{template "_form"}}
+				{{end}}	
 			</div>
 		</div>
 		<div>{{template "_footer"}}</div>
 	</div>
 </body>
-
 </html>
 {{end}}

@@ -28,23 +28,28 @@ func main()  {
 		}
 	})
 	http.HandleFunc("/contact", func(w http.ResponseWriter, r *http.Request) {
-		err = tmpl.ExecuteTemplate(w,"contact",nil)
-		if err != nil {
-			http.Error(w,err.Error(),http.StatusInternalServerError)
-		}
+	
 
 		if r.Method == http.MethodPost{
-			details := ContactDetails{
-				r.FormValue("email"),
-				r.FormValue("subject"),
-				r.FormValue("body"),
+			if err := r.ParseForm(); err != nil {
+				http.Error(w, err.Error(), http.StatusBadRequest)
 			}
-			fmt.Println(details.Email,details.Subject,details.Body)
+			details := ContactDetails{
+				Email: r.FormValue("email"),
+				Subject: r.FormValue("subject"),
+				Body: r.FormValue("message"),
+			}
+			fmt.Println(details)
 			err = tmpl.ExecuteTemplate(w,"contact",struct{Success bool}{true})
 			if err != nil{
 				http.Error(w,err.Error(),http.StatusInternalServerError)
 			}
 
+		}else{
+			err = tmpl.ExecuteTemplate(w,"contact",nil)
+			if err != nil {
+				http.Error(w,err.Error(),http.StatusInternalServerError)
+			}
 		}
 	})
 	http.HandleFunc("/docs", func(w http.ResponseWriter, r *http.Request) {
