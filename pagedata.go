@@ -160,7 +160,7 @@ class="hover:underline hover:text-gray-300">King's College London</a>, where I a
 		Content: []template.HTML{
 			`
 			<div id="gr_updates_widget">
-				<iframe sandbox id="the_iframe" src="https://goodreads.com/widgets/user_update_widget?height=250&num_updates=20&user=184799979&width=400" width="398" height="180" frameborder="0"></iframe>
+				<iframe sandbox id="the_iframe" src="https://goodreads.com/widgets/user_update_widget?height=250&num_updates=999&user=184799979&width=400" width="398" height="180" frameborder="0"></iframe>
 					<div id="gr_footer">
 						<a href="https://www.goodreads.com/"><img alt="Goodreads: Book reviews, recommendations, and discussion" src="https://s.gr-assets.com/images/layout/goodreads_logo_140.png" /></a>
 					</div>
@@ -276,9 +276,16 @@ var about_data = AboutData{
 			<p>My day to day responisbility included: </p>
 			<br>
 			<ul>
-				<li>• Monitoring HPC health, alonside other services provided by e-Research</li>
+				<li>• Monitoring HPC health (with <code>htop</code>, <code>slurm</code> and other monitoring software), alonside other services provided by e-Research.</li>
+				<li>• Troubleshoot user queries.</li>
+				<li>• Adding software to HPC, through Spack. </li>
+				<li>• Data migrations using <code> rsync</code>. </li>
+				<li>• Helping with in-person training events. </li>
+				<li>• Developing HPC related skills during Personal Devlopment Time, alongside a Slackbot and Spack contributions. </li>
 			</ul>
 			<br>	
+			<p>I also got to go to <a href="https://www.scd.stfc.ac.uk/Pages/CIUK2023.aspx">CIUK 2023</a> and <a href="https://archive.fosdem.org/2024/">FOSDEM 2024</a>, both of which were amazing experiences.</p>
+			<p>This placement has helped maked meanignful connections within the industry alonside a new found appreciation towards Open Source Software (OSS).</p>
 			`,
 		},
 	},
