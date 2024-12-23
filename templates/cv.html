@@ -1,4 +1,4 @@
-{{define "doc"}}
+{{define "cv"}}
 <!DOCTYPE html>
 <html lang="en">
 {{template "_head"}}
@@ -9,6 +9,13 @@
         <div class="flex-grow">
             <h1 class="text-white">CV</h1>
         </div>
+        <canvas id="the-canvas"></canvas>
+        <script>
+        {{range .JavaScript}}
+        {{.}}
+        {{end}}
+
+        </script>
         <div>{{template "_footer"}}</div>
     </div>
 </body>

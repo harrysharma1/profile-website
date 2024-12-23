@@ -291,8 +291,68 @@ var about_data = AboutData{
 	},
 }
 
+type CVData struct {
+	Resume     []template.HTML
+	JavaScript []template.JS
+}
 type ContactDetails struct {
 	Email   string
 	Subject string
 	Body    string
+}
+
+var cv_data = CVData{
+	Resume: []template.HTML{
+		`
+		<object
+		type = "application/pdf"
+		data = "../docs/cv_harry_updated.pdf"
+		width=400
+		height=600
+		>
+		</object>
+		`,
+	},
+	JavaScript: []template.JS{
+		`
+		const url = 'https://github.com/harrysharma1/profile-website/blob/main/docs/cv_harry_updated.pdf';
+
+		const loadingTask = pdfjsLib.getDocument(url);
+		loadingTask.promise.then(function(pdf) {
+			console.log('PDF loaded');
+
+			// Fetch the first page
+			pdf.getPage(1).then(function(page) {
+				console.log('Page loaded');
+
+				const scale = 1.5;
+				const viewport = page.getViewport({ scale: scale });
+
+				// Prepare canvas using PDF page dimensions
+				const canvas = document.getElementById('the-canvas');
+				const context = canvas.getContext('2d');
+				const outputScale = window.devicePixelRatio || 1;
+
+				canvas.width = Math.floor(viewport.width * outputScale);
+				canvas.height = Math.floor(viewport.height * outputScale);
+				canvas.style.width = Math.floor(viewport.width) + "px";
+				canvas.style.height = Math.floor(viewport.height) + "px";
+
+				const transform = outputScale !== 1
+					? [outputScale, 0, 0, outputScale, 0, 0]
+					: null;
+
+				// Render PDF page into canvas context
+				const renderContext = {
+					canvasContext: context,
+					transform: transform,
+					viewport: viewport
+				};
+				page.render(renderContext);
+			});
+		}, function(reason) {
+			console.error(reason);
+		});
+		`,
+	},
 }
